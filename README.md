@@ -119,11 +119,11 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
         
         /sbin/service mongod status
         
-3. Rum command to initalize the 'user' collection of 'userdb' database
+3. Rum command to initalize the 'user' collection of 'userdb' database with user.json from this project
         
         mongoimport -d userdb -c user --file ./user.json --upsert
 
-4. Rum command to initalize the 'serviceAuth' collection of 'userdb' database
+4. Rum command to initalize the 'serviceAuth' collection of 'userdb' database with serviceAuth.json from this project
         
         mongoimport -d userdb -c serviceAuth --file ./serviceAuth.json --upsert
 
