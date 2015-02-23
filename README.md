@@ -2,7 +2,7 @@
 
 The project uses Java, Maven, Mongotemplate and a JAX-RS library called Jersey to create a very simple REST API app. The project is executable and has been verified in Linux env.
 
-Our order consists of a reference number and a customer name. The app has three entry points:
+The app has four REST API entry points:
 
     HTTP POST to authenticate a user based on a login/password passed in a JSON input payload and verify the user crendential info against the "user" and "ServiceAuth" collections(tables) of "userdb" MongoDB.
 
