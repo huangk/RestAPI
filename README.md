@@ -151,10 +151,11 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
 
 ###Build the package of the app
 1. Download the project to /home/<user>
-2. Modify the MongoDB host of Mongo bean in RestAPI/src/main/resource/applicationContext.html
+
+2. Update the MongoDB host of Mongo bean in RestAPI/src/main/resource/applicationContext.html
 
         <bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
-            <property name="host" value="192.168.1.70"/>
+            <property name="host" value="127.0.0.1"/>
         </bean>
         
 3. Run command to the package
@@ -183,11 +184,10 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
         
 
 
-# Test the App
+# Test the REST API
 We could use "RestClient" ADD-ON of Firefox internet browser to do the tests. To install RestClient ADD-ON in FireFox internet Browse , please follow the instrunctions from https://addons.mozilla.org/en-us/firefox/addon/restclient/
 
-###Test end point: HTTP POST to authenticate a user based on a login/password passed in a JSON input payload and verify the user crendential info against the "user" and "ServiceAuth" collections(tables) of "userdb" MongoDB.
-"
+###Test the end point: HTTP POST to authenticate a user based on a login/password passed in a JSON input payload and verify the user crendential info against the "user" and "ServiceAuth" collections(tables) of "userdb" MongoDB.
 Steps:
 
 1. Input 'http://<IP address>:8080/restapi/v1/login' in "URL" input field
@@ -208,7 +208,7 @@ The auth_token will be return
 
         'cc2ea196-72fb-4b06-8cc3-fab5cefb21e3' 
  
-###Test end point: HTTP GET to return all user result set from the "user" collection(table) of "userdb" Mongodb in a JSON output payload and the result set should be filtered by a URL parameter (can be city, profession, etc) and grouped by parameter.
+###Test the end point: HTTP GET to return all user result set from the "user" collection(table) of "userdb" Mongodb in a JSON output payload and the result set should be filtered by a URL parameter (can be city, profession, etc) and grouped by parameter.
 Steps:
 
 1. Input 'http://<IP address>:8080/restapi/v1/allusers/field/profession/value/Engineer/group/city' in "URL" input field
@@ -227,7 +227,7 @@ The JSON playload will be return
 
         [{"personId":"3","name":"User3","password":"Password3","city":"city1","age":42,"profession":"Engineer"},{"personId":"7","name":"User7","password":"Password7","city":"city1","age":36,"profession":"Engineer"},{"personId":"9","name":"User9","password":"Password9","city":"city1","age":36,"profession":"Engineer"},{"personId":"11","name":"User11","password":"Password11","city":"city1","age":26,"profession":"Engineer"},{"personId":"5","name":"User5","password":"Password5","city":"city3","age":46,"profession":"Engineer"}]
 
-###Test end point: HTTP GET to check and return the status of all the dependant components in a JSON output payload. In the project, it is Mongodb.
+###Test the end point: HTTP GET to check and return the status of all the dependant components in a JSON output payload. In the project, it is Mongodb.
 Steps:
 
 1. Input 'http://<IP address>:8080/restapi/v1/filelist?directory=/tmp' in "URL" input field
@@ -246,7 +246,7 @@ The JSON playload will be return
 
         ["temp file1","temp file2"]
 
-###Test end point: HTTP GET to return the list of files in a given directory in a JSON output payload.
+###Test the end point: HTTP GET to return the list of files in a given directory in a JSON output payload.
 Steps:
 
 1. Input 'http://<IP address>:8080/restapi/v1/componentsstatus' in "URL" input field
