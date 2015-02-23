@@ -189,51 +189,80 @@ We could use "RestClient" ADD-ON of Firefox internet browser to do the tests. To
 ###Test HTTP POST to authenticate a user based on a login/password passed in a JSON input payload and verify the user crendential info against the "user" and "ServiceAuth" collections(tables) of "userdb" MongoDB.
 "
 Steps:
+
 1. Input 'http://<IP address>:8080/restapi/v1/login' in "URL" input field
+
 2. Select "POST" methd
+
 3. Add 'Content-type' Request Header with the 'application/json' value.
+
 4. Add 'service_key' Request Header with the '5fc5f8c3-1a60-42f6-8147-f4e86b1ce952' value.
+
 5. Add '{"name":"User1","password":"Password1"}' as the Request Body
+
 6. Click on 'SEND' Button
 
 Response:
+
 The auth_token will be return
+
         'cc2ea196-72fb-4b06-8cc3-fab5cefb21e3' 
  
 ###Test HTTP GET to return all user result set from the "user" collection(table) of "userdb" Mongodb in a JSON output payload and the result set should be filtered by a URL parameter (can be city, profession, etc) and grouped by parameter.
 Steps:
+
 1. Input 'http://<IP address>:8080/restapi/v1/allusers/field/profession/value/Engineer/group/city' in "URL" input field
+
 2. Select "GET" methd
+
 3. Add 'auth_token' Request Header with the above token from the response.
+
 4. Add 'service_key' Request Header with the '5fc5f8c3-1a60-42f6-8147-f4e86b1ce952' value.
+
 5. Click on 'SEND' Button
 
 Response:
+
 The JSON playload will be return
+
         [{"personId":"3","name":"User3","password":"Password3","city":"city1","age":42,"profession":"Engineer"},{"personId":"7","name":"User7","password":"Password7","city":"city1","age":36,"profession":"Engineer"},{"personId":"9","name":"User9","password":"Password9","city":"city1","age":36,"profession":"Engineer"},{"personId":"11","name":"User11","password":"Password11","city":"city1","age":26,"profession":"Engineer"},{"personId":"5","name":"User5","password":"Password5","city":"city3","age":46,"profession":"Engineer"}]
 
 ###Test HTTP GET to check and return the status of all the dependant components in a JSON output payload. In the project, it is Mongodb.
 Steps:
+
 1. Input 'http://<IP address>:8080/restapi/v1/filelist?directory=/tmp' in "URL" input field
+
 2. Select "GET" methd
+
 3. Add 'auth_token' Request Header with the above token from the response.
+
 4. Add 'service_key' Request Header with the '5fc5f8c3-1a60-42f6-8147-f4e86b1ce952' value.
+
 5. Click on 'SEND' Button
 
 Response:
+
 The JSON playload will be return
+
         ["temp file1","temp file2"]
 
 ###Test HTTP GET to return the list of files in a given directory in a JSON output payload.
 Steps:
+
 1. Input 'http://<IP address>:8080/restapi/v1/componentsstatus' in "URL" input field
+
 2. Select "GET" methd
+
 3. Add 'auth_token' Request Header with the above token from the response.
+
 4. Add 'service_key' Request Header with the '5fc5f8c3-1a60-42f6-8147-f4e86b1ce952' value.
+
 5. Click on 'SEND' Button
 
 Response:
+
 The JSON playload will be return
+
         [{"component":"Mongo","status":"mongod (pid 6477) is running..."}]
 
 # How to version the service
