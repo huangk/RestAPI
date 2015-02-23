@@ -1,0 +1,12 @@
+{ "_id" : ObjectId("54e99755e4b07b087f19ed97"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "2752dbeb-63b6-4150-bf4f-ec741a388e30", "user" : "User1" }
+{ "_id" : ObjectId("54e99755e4b07b087f19ed98"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "c5e43fb3-76f9-4623-b8d8-aa0aa9c2b228", "user" : "User2" }
+{ "_id" : ObjectId("54e99755e4b07b087f19ed99"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "820b94f1-44c4-418e-b615-0aa502ec8617", "user" : "User3" }
+{ "_id" : ObjectId("54e99755e4b07b087f19ed9a"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "0f1a18d4-fbbd-426d-8880-7d863dc9fabf", "user" : "User4" }
+{ "_id" : ObjectId("54e99755e4b07b087f19ed9b"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "3ae98b46-c199-4116-ac6c-32a6a90a9443", "user" : "User5" }
+{ "_id" : ObjectId("54e99755e4b07b087f19ed9c"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "e2fb5151-7b1e-48fb-92aa-1b6ceed20964", "user" : "User6" }
+{ "_id" : ObjectId("54e99755e4b07b087f19ed9d"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "b02ece4f-3b0e-47a0-b67c-58663ba0c72e", "user" : "User7" }
+{ "_id" : ObjectId("54e99755e4b07b087f19ed9e"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "2e9bb86b-0a2e-4525-ad38-600dbaa69762", "user" : "User8" }
+{ "_id" : ObjectId("54e99755e4b07b087f19ed9f"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "f68744f1-c667-48be-a292-189d61196fdd", "user" : "User9" }
+{ "_id" : ObjectId("54e99755e4b07b087f19eda0"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "7ec873d8-7445-4e63-916d-8aaeee762264", "user" : "User10" }
+{ "_id" : ObjectId("54e99755e4b07b087f19eda1"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "00f41461-659c-414a-b5fb-b27ca863b8df", "user" : "User11" }
+{ "_id" : ObjectId("54e99755e4b07b087f19eda2"), "_class" : "com.rest.service.mongodb.domain.ServiceAuth", "key" : "cc46a4b9-ed0c-4568-baa2-acbb9337b801", "user" : "User12" }
