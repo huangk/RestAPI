@@ -279,7 +279,7 @@ The solution should be to define two more '@PathParam' URL paramenters to pass i
         
         http://<IP address>:8080/restapi/v1/allusers/field/{field}/value/{value}/group/{group}/pagesize/{pagesize}/pagenumber/{pagenumber}
 
-The service could translate the values to the MongoTemplate Query object as the parameter of 'skip' method and the parameter of 'limit' method. Right now, they are hard-coded as 1(the record number of the previous pages) and 10(page size).
+The service could translate the values to the MongoTemplate Query object as the parameter of 'skip' method and the parameter of 'limit' method. 
  
         Query query = new Query();
         query.addCriteria(Criteria.where(field).is(value)); 
