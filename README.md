@@ -6,22 +6,22 @@ The app has four REST API end points:
 
 1. HTTP POST to authenticate a user based on a login/password passed in a JSON input payload and verify the user crendential info against the "user" and "ServiceAuth" collections(tables) of "userdb" MongoDB.
 
-        http://<IP address of Web App Server>:8080/restapi/v1/login
+        http://{IP Address/Host Name of Web App Server}:8080/restapi/v1/login
         
 
 2. HTTP GET to return all user result set from the "user" collection(table) of "userdb" Mongodb in a JSON output payload and the result set should be filtered by a URL parameter (can be city, profession, etc) and grouped by parameter.
 
-        http://<IP address of Web App Server>:8080/restapi/v1/allusers/field/{field}/value/{value}/group/{group}
+        http://{IP Address/Host Name of Web App Server}:8080/restapi/v1/allusers/field/{field}/value/{value}/group/{group}
         
 
 3. HTTP GET to check and return the status of all the dependant components in a JSON output payload. In the project, it is Mongodb.
     
-        http://<IP address of Web App Server>:8080/restapi/v1/componentsstatus        
+        http://{IP Address/Host Name of Web App Server}:8080/restapi/v1/componentsstatus        
         
     
 4. HTTP GET to return the list of files in a given directory by a query parameter in a JSON output payload.
     
-        http://<IP address of Web App Server>:8080/restapi/v1/filelist?directory={directory}
+        http://{IP Address/Host Name of Web App Server}:8080/restapi/v1/filelist?directory={directory}
         
         
 
@@ -152,7 +152,7 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
 ###Build the package of the app
 1. Download the project to /home/<user>
 
-2. Update the IP Address of MongoDB host of Mongo bean in RestAPI/src/main/resource/applicationContext.html
+2. Update the IP Address/Host Name of MongoDB host of Mongo bean in RestAPI/src/main/resource/applicationContext.html
 
         <bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
             <property name="host" value="127.0.0.1"/>
@@ -179,7 +179,7 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
         
 4. Do smoke check of the rest api by the command to get "Hey, This is REST API" back
 
-        wget http://{IP address of Tomcat}:8080/restapi/v1
+        wget http://{IP Address/Host Name of Tomcat}:8080/restapi/v1
         Hey, This is REST API 
         
 
@@ -193,7 +193,7 @@ Like what has been discussed in the authentication and authorization rules earil
     HTTP POST to authenticate a user based on a login/password passed in a JSON input payload and verify the user crendential info against the "user" and "ServiceAuth" collections(tables) of "userdb" MongoDB.
 Steps:
 
-1. Input 'http://{IP address of Tomcat}:8080/restapi/v1/login' in "URL" input field
+1. Input 'http://{IP Address/Host Name of Tomcat}:8080/restapi/v1/login' in "URL" input field
 
 2. Select "POST" methd
 
@@ -215,7 +215,7 @@ The auth_token will be return
     HTTP GET to return all user result set from the "user" collection(table) of "userdb" Mongodb in a JSON output payload and the result set should be filtered by a URL parameter (can be city, profession, etc) and grouped by parameter.
 Steps:
 
-1. Input 'http://{IP address of Tomcat}:8080/restapi/v1/allusers/field/profession/value/Engineer/group/city' in "URL" input field
+1. Input 'http://{IP Address/Host Name of Tomcat}:8080/restapi/v1/allusers/field/profession/value/Engineer/group/city' in "URL" input field
 
 2. Select "GET" methd
 
@@ -235,7 +235,7 @@ The JSON playload will be return
     HTTP GET to check and return the status of all the dependant components in a JSON output payload. In the project, it is Mongodb.
 Steps:
 
-1. Input 'http://{IP address of Tomcat}:8080/restapi/v1/filelist?directory=/tmp' in "URL" input field
+1. Input 'http://{IP Address/Host Name of Tomcat}:8080/restapi/v1/filelist?directory=/tmp' in "URL" input field
 
 2. Select "GET" methd
 
@@ -255,7 +255,7 @@ The JSON playload will be return
     HTTP GET to return the list of files in a given directory in a JSON output payload.
 Steps:
 
-1. Input 'http://{IP address of Tomcat}:8080/restapi/v1/componentsstatus' in "URL" input field
+1. Input 'http://{IP Address/Host Name of Tomcat}:8080/restapi/v1/componentsstatus' in "URL" input field
 
 2. Select "GET" methd
 
@@ -274,16 +274,16 @@ The JSON playload will be return
 # How to version the service
 The answer was generally pretty simple: if the contract is the service, and the service is exposed as a URL, then the solution is to version the URL and map the different URL to a different version app as a different serlvet-mapping in web.xml. As such, the "v1" endpoints of this app are
         
-        http://<IP address of Web App Server>:8080/restapi/v1
-        http://<IP address of Web App Server>:8080/restapi/v1/login
-        http://<IP address of Web App Server>:8080/restapi/v1/allusers/field/{field}/value/{value}/group/{group}
-        http://<IP address of Web App Server>:8080/restapi/v1/filelist?directory={directory}
-        http://<IP address of Web App Server>:8080/restapi/v1/componentsstatus
+        http://{IP Address/Host Name of Web App Server}:8080/restapi/v1
+        http://{IP Address/Host Name of Web App Server}:8080/restapi/v1/login
+        http://{IP Address/Host Name of Web App Server}:8080/restapi/v1/allusers/field/{field}/value/{value}/group/{group}
+        http://{IP Address/Host Name of Web App Server}:8080/restapi/v1/filelist?directory={directory}
+        http://{IP Address/Host Name of Web App Server}:8080/restapi/v1/componentsstatus
 
 # How to implement the pagination?
 The solution should be to add two more '@PathParam' URL paramenters into the end point URL in order to pass in the page size and the page number and the URL of the endpoint will look like
         
-        http://<IP address>:8080/restapi/v1/allusers/field/{field}/value/{value}/group/{group}/pagesize/{pagesize}/pagenumber/{pagenumber}
+        http://{IP Address/Host Name of Web App Server}:8080/restapi/v1/allusers/field/{field}/value/{value}/group/{group}/pagesize/{pagesize}/pagenumber/{pagenumber}
 
 The service could translate the values to the MongoTemplate (spring-data-mongodb) Query object as the parameter of 'skip' method and the parameter of 'limit' method. 
  
