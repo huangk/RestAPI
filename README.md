@@ -1,6 +1,6 @@
 # A sample Java REST service using Jersey and Maven and MongoDB
 
-The project uses Java, Maven, Mongotemplate and a JAX-RS library called Jersey to create a very simple REST API app. The project is executable and has been verified in Linux env.
+The project uses Java, Maven, Mongotemplate and a JAX-RS library called Jersey to create a very simple REST API app. The project is executable and has been verified in Linux env and could be deployed and run in Windows OS as well since Java(JVM) is platform independent language.
 
 The app has four REST API end points:
 
@@ -110,7 +110,7 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
 # Deployment instructions
 
 ###Install MongoDB
-1. By following http://docs.mongodb.org/manual/tutorial/install-mongodb-on-red-hat-centos-or-fedora-linux/ , run
+1. By following the instructions on http://docs.mongodb.org/manual/tutorial/install-mongodb-on-red-hat-centos-or-fedora-linux/ , run
 
         sudo yum install -y mongodb-org
         sudo /sbin/service mongod restart
@@ -186,7 +186,7 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
 # Test the App
 We could use "RestClient" ADD-ON of Firefox internet browser to do the tests. To install RestClient ADD-ON in FireFox internet Browse , please follow the instrunctions from https://addons.mozilla.org/en-us/firefox/addon/restclient/
 
-###Test 'HTTP POST to authenticate a user based on a login/password passed in a JSON input payload and verify the user crendential info against the "user" and "ServiceAuth" collections(tables) of "userdb" MongoDB'.
+###Test end point: HTTP POST to authenticate a user based on a login/password passed in a JSON input payload and verify the user crendential info against the "user" and "ServiceAuth" collections(tables) of "userdb" MongoDB.
 "
 Steps:
 
@@ -208,7 +208,7 @@ The auth_token will be return
 
         'cc2ea196-72fb-4b06-8cc3-fab5cefb21e3' 
  
-###Test 'HTTP GET to return all user result set from the "user" collection(table) of "userdb" Mongodb in a JSON output payload and the result set should be filtered by a URL parameter (can be city, profession, etc) and grouped by parameter'.
+###Test end point: HTTP GET to return all user result set from the "user" collection(table) of "userdb" Mongodb in a JSON output payload and the result set should be filtered by a URL parameter (can be city, profession, etc) and grouped by parameter.
 Steps:
 
 1. Input 'http://<IP address>:8080/restapi/v1/allusers/field/profession/value/Engineer/group/city' in "URL" input field
@@ -227,7 +227,7 @@ The JSON playload will be return
 
         [{"personId":"3","name":"User3","password":"Password3","city":"city1","age":42,"profession":"Engineer"},{"personId":"7","name":"User7","password":"Password7","city":"city1","age":36,"profession":"Engineer"},{"personId":"9","name":"User9","password":"Password9","city":"city1","age":36,"profession":"Engineer"},{"personId":"11","name":"User11","password":"Password11","city":"city1","age":26,"profession":"Engineer"},{"personId":"5","name":"User5","password":"Password5","city":"city3","age":46,"profession":"Engineer"}]
 
-###Test 'HTTP GET to check and return the status of all the dependant components in a JSON output payload. In the project, it is Mongodb'.
+###Test end point: HTTP GET to check and return the status of all the dependant components in a JSON output payload. In the project, it is Mongodb.
 Steps:
 
 1. Input 'http://<IP address>:8080/restapi/v1/filelist?directory=/tmp' in "URL" input field
@@ -246,7 +246,7 @@ The JSON playload will be return
 
         ["temp file1","temp file2"]
 
-###Test 'HTTP GET to return the list of files in a given directory in a JSON output payload'.
+###Test end point: HTTP GET to return the list of files in a given directory in a JSON output payload.
 Steps:
 
 1. Input 'http://<IP address>:8080/restapi/v1/componentsstatus' in "URL" input field
@@ -266,7 +266,7 @@ The JSON playload will be return
         [{"component":"Mongo","status":"mongod (pid 6477) is running..."}]
 
 # How to version the service
-The answer was generally pretty simple: if the contract is the service, and the service is exposed as a URL, then the solution is to version the URL. As such, the endpoints are
+The answer was generally pretty simple: if the contract is the service, and the service is exposed as a URL, then the solution is to version the URL and map the different URL to a different version app as a different serlvet-mapping in web.xml. As such, the endpoints are
         
         http://<IP address>:8080/restapi/v1
         http://<IP address>:8080/restapi/v1/login
@@ -275,7 +275,7 @@ The answer was generally pretty simple: if the contract is the service, and the 
         http://<IP address>:8080/restapi/v1/componentsstatus
 
 # How to implement the pagination?
-The solution should be to define two more '@PathParam' URL paramenters to pass in the page size and the page number and the URL of the endpoint will look like
+The solution should be to add two more '@PathParam' URL paramenters into the end point URL in order to pass in the page size and the page number and the URL of the endpoint will look like
         
         http://<IP address>:8080/restapi/v1/allusers/field/{field}/value/{value}/group/{group}/pagesize/{pagesize}/pagenumber/{pagenumber}
 
