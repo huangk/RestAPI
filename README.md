@@ -151,7 +151,13 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
 
 ###Build the package of the app
 1. Download the project to /home/<user>
-2. Run command to the package
+2. Modify the MongoDB host of Mongo bean in RestAPI/src/main/resource/applicationContext.html
+
+        <bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
+            <property name="host" value="192.168.1.70"/>
+        </bean>
+        
+3. Run command to the package
 
         cd RestAPI
         mvn clean
