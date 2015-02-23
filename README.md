@@ -186,6 +186,7 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
 
 # Test the REST API
 We could use "RestClient" ADD-ON of Firefox internet browser to do the tests. To install RestClient ADD-ON in FireFox internet Browse , please follow the instrunctions from https://addons.mozilla.org/en-us/firefox/addon/restclient/
+Like what has been discussed in the authentication and authorization rules eariler, "service_key" of the user is required to be passed as the custom request header to validate the user. After the user/client gets the authorization token from the first end point, the authorization token will be required to pass as "auth_token" custom request header to validate the user login session as well as "service_key" for all the other end points. There should be an expiration rule and a logout rule to make the "service_key" and the session "auth_token" invalid and these rules are not implemented in this app yet and  could be developed as an enhancement of the app.
 
 ###Test end point: 
     HTTP POST to authenticate a user based on a login/password passed in a JSON input payload and verify the user crendential info against the "user" and "ServiceAuth" collections(tables) of "userdb" MongoDB.
