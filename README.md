@@ -179,7 +179,7 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
         
 4. Do smoke check of the rest api by the command to get "Hey, This is REST API" back
 
-        wget http://<ip address of Tomcat>:8080/restapi/v1
+        wget http://{IP address of Tomcat}:8080/restapi/v1
         Hey, This is REST API 
         
 
@@ -193,7 +193,7 @@ Like what has been discussed in the authentication and authorization rules earil
     HTTP POST to authenticate a user based on a login/password passed in a JSON input payload and verify the user crendential info against the "user" and "ServiceAuth" collections(tables) of "userdb" MongoDB.
 Steps:
 
-1. Input 'http://<IP address of Tomcat>:8080/restapi/v1/login' in "URL" input field
+1. Input 'http://{IP address of Tomcat}:8080/restapi/v1/login' in "URL" input field
 
 2. Select "POST" methd
 
@@ -215,7 +215,7 @@ The auth_token will be return
     HTTP GET to return all user result set from the "user" collection(table) of "userdb" Mongodb in a JSON output payload and the result set should be filtered by a URL parameter (can be city, profession, etc) and grouped by parameter.
 Steps:
 
-1. Input 'http://<IP address of Tomcat>:8080/restapi/v1/allusers/field/profession/value/Engineer/group/city' in "URL" input field
+1. Input 'http://{IP address of Tomcat}:8080/restapi/v1/allusers/field/profession/value/Engineer/group/city' in "URL" input field
 
 2. Select "GET" methd
 
@@ -235,7 +235,7 @@ The JSON playload will be return
     HTTP GET to check and return the status of all the dependant components in a JSON output payload. In the project, it is Mongodb.
 Steps:
 
-1. Input 'http://<IP address of Tomcat>:8080/restapi/v1/filelist?directory=/tmp' in "URL" input field
+1. Input 'http://{IP address of Tomcat}:8080/restapi/v1/filelist?directory=/tmp' in "URL" input field
 
 2. Select "GET" methd
 
@@ -255,7 +255,7 @@ The JSON playload will be return
     HTTP GET to return the list of files in a given directory in a JSON output payload.
 Steps:
 
-1. Input 'http://<IP address of Tomcat>:8080/restapi/v1/componentsstatus' in "URL" input field
+1. Input 'http://{IP address of Tomcat}:8080/restapi/v1/componentsstatus' in "URL" input field
 
 2. Select "GET" methd
 
