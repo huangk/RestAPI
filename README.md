@@ -171,13 +171,13 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
         
 2. Install the above app packate in Tomcat by using the followng command. Of course, we could install in through the Tomcat console http://<ip address>:8080
 
-        cp /home/<user>/RestAPI/target/restapi.war /usr/local/pache-tomcat-7.0.59/webapps
+        cp /home/<user>/RestAPI/target/restapi.war /usr/local/apache-tomcat-7.0.59/webapps
 
 3. Start Tomcat
 
         /user/local/apache-tomcat-7.0.59/bin/startup.sh
         
-4. Do smoke test of the rest api by the command to get "Hey, This is REST API" back
+4. Do smoke check of the rest api by the command to get "Hey, This is REST API" back
 
         wget http://<ip address>:8080/restapi/v1
         Hey, This is REST API 
