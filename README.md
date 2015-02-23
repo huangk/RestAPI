@@ -1,6 +1,6 @@
 # A sample Java REST service using Jersey and Maven and MongoDB
 
-The project uses Java, Maven, Mongotemplate and a JAX-RS library called Jersey to create a very simple REST API app. The project has been verified in Linux env.
+The project uses Java, Maven, Mongotemplate and a JAX-RS library called Jersey to create a very simple REST API app. The project is executable and has been verified in Linux env.
 
 Our order consists of a reference number and a customer name. The app has three entry points:
 
