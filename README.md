@@ -41,7 +41,7 @@ Upon authentication (through the login() method), the system will then generate 
         service_key        The service key that enables a HTTP client to access the REST Web Services. This is the first layer of authenticating and authorizing the HTTP Request. 
         auth_token         The token generated upon username/password authentication, which is to be used for any REST Web Service calls (except for the authentication method shown later). 
 
-Note: "service_key to username" mapping table is defined the 'serviceAuth' collections of Mongodb. "auth_token to user" mapping table is defined as the hash map in side the Java 'Authenticator' Object. Because the "auth_token" is the running time data. 
+Note: "service_key to username" mapping table is defined as the 'serviceAuth' collections of Mongodb. "auth_token to user" mapping table is defined as the hash map in side the Java 'Authenticator' Object. Because the "auth_token" is the running time data. 
       Both mapping could be enhaned with the expiration mechanism in the product reality.
 
 # Technologies Used
