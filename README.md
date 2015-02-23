@@ -101,7 +101,7 @@ Your Data Set is Going to be Big (starting from 1GB) and Schema is Not Stable
 Adding new columns to RDBMS can lock the entire database in some database, or create a major load and performance degradation in other. Usually it happens when table size is larger than 1GB (and can be major pain for a system like BillRun that is described bellow and has several TB in a single table). As MongoDB is schema-less, adding a new field, does not effect old rows (or documents) and will be instant. Other plus is that you do not need a DBA to modify your schema when application changes.
 
 ###Why Tomcat Web App Server?
-Tomcat is used for this project as the web application server to host the REST API service. This project could also be deployed to the other Java platform like Oracle Weblogic, JBoss, Jetty.
+Tomcat is used for this project as the web application server to host the REST API service. This project could also be deployed to the other Java platform like Glassfish, Oracle Weblogic, JBoss, Jetty.
 Apache Tomcat is an open source application server that (in version 7.0) implements the Servlet 3.0 and JavaServer Pages 2.2 specifications, and includes many additional features that make it a useful and simple platform for developing and deploying web applications and web services.
 
 ###Why spring-data-mongodb?
