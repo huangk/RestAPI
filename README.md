@@ -105,7 +105,7 @@ Tomcat is used for this project as the web application server to host the REST A
 Apache Tomcat is an open source application server that (in version 7.0) implements the Servlet 3.0 and JavaServer Pages 2.2 specifications, and includes many additional features that make it a useful and simple platform for developing and deploying web applications and web services.
 
 ###Why spring-data-mongodb?
-The Spring Data MongoDB project provides integration with the MongoDB document database. Key functional areas of Spring Data MongoDB are a POJO centric model for interacting with a MongoDB DBCollection and easily writing a Repository style data access layer.
+The Spring Data MongoDB project provides integration with the MongoDB document database. Key functional areas of Spring Data MongoDB are a POJO centric model for interacting with a MongoDB DBCollection and easily writing a Repository style data access layer. More details could be found in http://docs.spring.io/spring-data/mongodb/docs/current/reference/html/ .
 
 # Deployment instructions
 
@@ -283,7 +283,7 @@ The solution should be to add two more '@PathParam' URL paramenters into the end
         
         http://<IP address>:8080/restapi/v1/allusers/field/{field}/value/{value}/group/{group}/pagesize/{pagesize}/pagenumber/{pagenumber}
 
-The service could translate the values to the MongoTemplate Query object as the parameter of 'skip' method and the parameter of 'limit' method. 
+The service could translate the values to the MongoTemplate (spring-data-mongodb) Query object as the parameter of 'skip' method and the parameter of 'limit' method. 
  
         Query query = new Query();
         query.addCriteria(Criteria.where(field).is(value)); 
