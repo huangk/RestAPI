@@ -115,7 +115,7 @@ The Spring Data MongoDB project provides integration with the MongoDB document d
         sudo yum install -y mongodb-org
         sudo /sbin/service mongod restart
 
-2. Run Command to check the staut of MongoDB to make sure the Mongod service running
+2. Run Command to check the status of MongoDB to make sure the Mongod service running
         
         /sbin/service mongod status
         
