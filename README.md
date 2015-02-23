@@ -266,7 +266,7 @@ The JSON playload will be return
         [{"component":"Mongo","status":"mongod (pid 6477) is running..."}]
 
 # How to version the service
-The answer was generally pretty simple: if the contract is the service, and the service is exposed as a URL, then the solution is to version the URL and map the different URL to a different version app as a different serlvet-mapping in web.xml. As such, the endpoints are
+The answer was generally pretty simple: if the contract is the service, and the service is exposed as a URL, then the solution is to version the URL and map the different URL to a different version app as a different serlvet-mapping in web.xml. As such, the "v1" endpoints of this app are
         
         http://<IP address>:8080/restapi/v1
         http://<IP address>:8080/restapi/v1/login
