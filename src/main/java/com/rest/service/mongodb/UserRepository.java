@@ -70,8 +70,6 @@ public class UserRepository {
         Query query = new Query();
         query.addCriteria(Criteria.where(field).is(value)); 
         query.with(new Sort(Sort.Direction.ASC,group));
-        query.skip(1);
-        query.limit(10);
         
         return mongoTemplate.find(query, User.class);
     }
